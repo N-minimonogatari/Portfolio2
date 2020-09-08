@@ -353,7 +353,8 @@ footer p {
   #r-slide img {
     height: 34%;
   }
-  .slider p {
+  .slider p,
+  .slider h2 {
     display: none;
   }
   .main-o p {
