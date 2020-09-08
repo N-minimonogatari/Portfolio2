@@ -1,0 +1,408 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 0;
+  margin-left: 0;
+  animation: fadeIn 2s ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+/* トップのスライド */
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#slide {
+  animation: loop 10s infinite;
+  display: flex;
+  flex-direction: column;
+  animation-direction: alternate;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#slide img{
+  height: 40%;
+  width: 60%;
+}
+
+#r-slide {
+  animation: loop 10s infinite;
+  display: flex;
+  flex-direction: column;
+  animation-direction: alternate-reverse;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#r-slide img{
+  height: 40%;
+  width: 60%;
+  margin: 0 0 0 auto;
+  vertical-align: bottom;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200%);
+  }
+}
+
+.slider p {
+  position: absolute;
+  font-size: 45px;
+  left: 38.5%;
+  top: 40%;
+  font-family: 'Playfair Display', serif;
+}
+
+.slider h2 {
+  margin-top: 700px;
+  font-size: 40px;
+}
+/* //トップのスライド */
+/* 次の */
+.main-o p {
+  font-size: 60px;
+  margin-top: 200px;
+  margin-bottom: 130px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.main-o p span {
+  font-size: 23px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.main-o img {
+  width: 100%;
+  height: 500px;
+}
+/* //次の */
+/* ブログ */
+.main-t p {
+  font-size: 40px;
+  margin-top: 100px;
+  margin-left: 40px;
+  font-family: 'Playfair Display', serif;
+}
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 200px;
+}
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/4);
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  line-height: 50px;
+  font-size: 16px;
+  display: block;
+  float: left;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#Asia:checked ~ #Asia_content,
+#Oceania:checked ~ #Oceania_content,
+#WH:checked ~ #WH_content {
+  display: block;
+}
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  background-color: #5ab4bd;
+  color: #fff;
+}
+
+.tab_content_description {
+  text-align: center;
+}
+
+.tab_content_description img {
+  width: 30%;
+  height: 30%;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* //ブログ */
+/* サイト一覧 */
+.main-s {
+  display: flex; /* 二つのスライドを横に並べる */
+  overflow: hidden;
+  position: relative;
+}
+
+#top {
+  animation: infinity-loop 20s infinite linear; /* 無限ループアニメーションの設定 */
+  display: flex; /* スライドの要素を横に並べる */
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+
+#top img{
+  width: 30%;
+  height: 30%;
+}
+/* 無限ループアニメーション */
+@keyframes infinity-loop {
+  from {
+    transform: translateX(0vw);
+  }
+  to {
+    transform: translateX(-77vw);
+  }
+}
+
+.main-s p {
+  position: absolute;
+  font-size: 50px;
+  font-family: 'Playfair Display', serif;
+  color: white;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.main-s h3 {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  color: white;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.site img,
+.site1 img,
+.site2 img {
+  width: 50%;
+  height: 50%;
+  padding-top: 200px;
+}
+
+.site img {
+  margin-left: 150px;
+}
+.site1 img {
+  margin-right: 150px;
+  float: right;
+}
+
+.site2 img {
+  margin-left: 150px;
+}
+
+.site h1,
+.site2 h1 {
+  float: right;
+  padding-top: 350px;
+  padding-right: 200px;
+  font-family: "Times New Roman";
+}
+
+.site1 h1 {
+  float: left;
+  padding-top: 350px;
+  padding-left: 200px;
+  font-family: "Times New Roman";
+}
+/* //サイト一覧 */
+/* ページTOPに戻る */
+.pagetop {
+  position: fixed;
+  right: 15px;
+  bottom: 20px;
+}
+
+.pagetop a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background: #7db4e6;
+  border-radius: 50%;
+  line-height: 50px;
+}
+
+.pagetop a i {
+  font-size: 20px;
+  color:#fff;
+  line-height: 50px;
+}
+/* //ページTOPに戻る */
+/* フッター */
+footer p {
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin-top: 70px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #slide img,
+  #r-slide img {
+    width: 110%;
+  }
+  .slider p {
+    display: none;
+  }
+  .main-o p {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .main-o img {
+    height: 250px;
+  }
+  #top img {
+    height: 50%;
+    width: 40%;
+  }
+  .main-s p{
+    font-size: 30px;
+  }
+  .site img {
+    margin-left: 50px;
+  }
+  .site1 img {
+    margin-right: 50px;
+    padding-top: 50px;
+  }
+  .site2 img {
+    padding-top: 50px;
+  }
+  .site h1 {
+    padding-right: 50px;
+    padding-top: 250px;
+  }
+  .site1 h1 {
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+  .site2 h1 {
+    padding-right: 50px;
+    padding-top: 250px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  #slide img,
+  #r-slide img {
+    height: 34%;
+  }
+  .main-o p {
+    font-size: 25px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+  .main-o p span {
+    font-size: 10px;
+  }
+  .main-o img {
+    height: 150px;
+  }
+  .main-t p {
+    font-size: 30px;
+    margin-top: 50px;
+  }
+  .tabs {
+    padding-bottom: none;
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  .tab_item {
+    font-size: 10px;
+    font-weight: bold;
+  }
+.main-s p {
+  font-size: 17px;
+}
+.site img {
+  padding-top: 70px;
+  margin-left: 30px;
+}
+.site h1 {
+  font-size: 15px;
+  padding-top: 100px;
+}
+.site1 img {
+  padding-top: 40px;
+}
+.site1 h1 {
+  font-size: 15px;
+  padding-top: 60px;
+}
+.site2 img {
+  margin-left: 30px;
+}
+.site2 h1 {
+  font-size: 15px;
+  padding-top: 80px;
+}
+footer p {
+  font-size: 9px;
+}
+}
