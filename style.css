@@ -353,6 +353,9 @@ footer p {
   #r-slide img {
     height: 34%;
   }
+  .slider p {
+    display: none;
+  }
   .main-o p {
     font-size: 25px;
     margin-top: 70px;
